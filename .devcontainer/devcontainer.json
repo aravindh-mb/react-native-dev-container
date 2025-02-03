@@ -1,0 +1,25 @@
+{
+  "name": "React Native Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "msjsdiag.vscode-react-native",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "visualstudioexptteam.vscodeintellicode"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      }
+    }
+  },
+  "forwardPorts": [
+    8081,
+    8080
+  ],
+  "postCreateCommand": "npm install",
+  "remoteUser": "node"
+}

@@ -1,5 +1,5 @@
-# Dockerfile
-FROM node:18-bullseye
+# Use the latest Node.js image
+FROM node:latest
 
 # Set environment variables for Android SDK
 ENV ANDROID_SDK_ROOT=/usr/local/android-sdk
@@ -37,11 +37,8 @@ WORKDIR /app
 # Expose the Metro bundler port
 EXPOSE 8081
 
-# Create a non-root user
-RUN useradd -m -s /bin/bash node
-
-# Set the user
+# Use the pre-existing non-root "node" user from the official image
 USER node
 
-# Default command
+# Default command to start Metro
 CMD ["npx", "react-native", "start"]
